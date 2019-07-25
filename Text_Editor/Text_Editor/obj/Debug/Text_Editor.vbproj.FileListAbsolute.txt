@@ -1,0 +1,11 @@
+C:\Users\Meme\Desktop\College\Semaster2\NETD\Labs\Lab5\Text_Editor\Text_Editor\bin\Debug\Text_Editor.exe
+C:\Users\Meme\Desktop\College\Semaster2\NETD\Labs\Lab5\Text_Editor\Text_Editor\bin\Debug\Text_Editor.pdb
+C:\Users\Meme\Desktop\College\Semaster2\NETD\Labs\Lab5\Text_Editor\Text_Editor\bin\Debug\Text_Editor.xml
+C:\Users\Meme\Desktop\College\Semaster2\NETD\Labs\Lab5\Text_Editor\Text_Editor\obj\Debug\Text_Editor.vbprojAssemblyReference.cache
+C:\Users\Meme\Desktop\College\Semaster2\NETD\Labs\Lab5\Text_Editor\Text_Editor\obj\Debug\Text_Editor.Resources.resources
+C:\Users\Meme\Desktop\College\Semaster2\NETD\Labs\Lab5\Text_Editor\Text_Editor\obj\Debug\Text_Editor.vbproj.GenerateResource.cache
+C:\Users\Meme\Desktop\College\Semaster2\NETD\Labs\Lab5\Text_Editor\Text_Editor\obj\Debug\Text_Editor.vbproj.CoreCompileInputs.cache
+C:\Users\Meme\Desktop\College\Semaster2\NETD\Labs\Lab5\Text_Editor\Text_Editor\obj\Debug\Text_Editor.exe
+C:\Users\Meme\Desktop\College\Semaster2\NETD\Labs\Lab5\Text_Editor\Text_Editor\obj\Debug\Text_Editor.xml
+C:\Users\Meme\Desktop\College\Semaster2\NETD\Labs\Lab5\Text_Editor\Text_Editor\obj\Debug\Text_Editor.pdb
+C:\Users\Meme\Desktop\College\Semaster2\NETD\Labs\Lab5\Text_Editor\Text_Editor\obj\Debug\Text_Editor.FrmTextEditor.resources
