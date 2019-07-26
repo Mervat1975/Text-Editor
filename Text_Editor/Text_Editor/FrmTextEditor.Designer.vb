@@ -70,36 +70,41 @@ Partial Class FrmTextEditor
         '
         Me.mnuFileNew.Name = "mnuFileNew"
         Me.mnuFileNew.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.N), System.Windows.Forms.Keys)
-        Me.mnuFileNew.Size = New System.Drawing.Size(146, 22)
+        Me.mnuFileNew.Size = New System.Drawing.Size(180, 22)
         Me.mnuFileNew.Text = "&New"
+        Me.mnuFileNew.ToolTipText = "New File"
         '
         'mnuFileOpen
         '
         Me.mnuFileOpen.Name = "mnuFileOpen"
         Me.mnuFileOpen.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.O), System.Windows.Forms.Keys)
-        Me.mnuFileOpen.Size = New System.Drawing.Size(146, 22)
+        Me.mnuFileOpen.Size = New System.Drawing.Size(180, 22)
         Me.mnuFileOpen.Text = "&Open"
+        Me.mnuFileOpen.ToolTipText = "Open File"
         '
         'mnuFileSave
         '
         Me.mnuFileSave.Name = "mnuFileSave"
         Me.mnuFileSave.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
-        Me.mnuFileSave.Size = New System.Drawing.Size(146, 22)
+        Me.mnuFileSave.Size = New System.Drawing.Size(180, 22)
         Me.mnuFileSave.Text = "&Save"
+        Me.mnuFileSave.ToolTipText = "Save File"
         '
         'mnuFileSaveAs
         '
         Me.mnuFileSaveAs.Name = "mnuFileSaveAs"
-        Me.mnuFileSaveAs.Size = New System.Drawing.Size(146, 22)
+        Me.mnuFileSaveAs.Size = New System.Drawing.Size(180, 22)
         Me.mnuFileSaveAs.Text = "Sa&ve As"
+        Me.mnuFileSaveAs.ToolTipText = "Save File As"
         '
         'mnuFileExit
         '
         Me.mnuFileExit.Name = "mnuFileExit"
         Me.mnuFileExit.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.F), System.Windows.Forms.Keys)
         Me.mnuFileExit.ShowShortcutKeys = False
-        Me.mnuFileExit.Size = New System.Drawing.Size(146, 22)
+        Me.mnuFileExit.Size = New System.Drawing.Size(180, 22)
         Me.mnuFileExit.Text = "E&xit"
+        Me.mnuFileExit.ToolTipText = "Exit Application"
         '
         'EditToolStripMenuItem
         '
@@ -112,22 +117,25 @@ Partial Class FrmTextEditor
         '
         Me.mnuEditCopy.Name = "mnuEditCopy"
         Me.mnuEditCopy.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.C), System.Windows.Forms.Keys)
-        Me.mnuEditCopy.Size = New System.Drawing.Size(144, 22)
+        Me.mnuEditCopy.Size = New System.Drawing.Size(180, 22)
         Me.mnuEditCopy.Text = "&Copy"
+        Me.mnuEditCopy.ToolTipText = "Copy selected text"
         '
         'mnuEditCut
         '
         Me.mnuEditCut.Name = "mnuEditCut"
         Me.mnuEditCut.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
-        Me.mnuEditCut.Size = New System.Drawing.Size(144, 22)
+        Me.mnuEditCut.Size = New System.Drawing.Size(180, 22)
         Me.mnuEditCut.Text = "Cu&t"
+        Me.mnuEditCut.ToolTipText = "Cut selected text"
         '
         'mnuEditPaste
         '
         Me.mnuEditPaste.Name = "mnuEditPaste"
         Me.mnuEditPaste.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
-        Me.mnuEditPaste.Size = New System.Drawing.Size(144, 22)
+        Me.mnuEditPaste.Size = New System.Drawing.Size(180, 22)
         Me.mnuEditPaste.Text = "&Paste"
+        Me.mnuEditPaste.ToolTipText = "Paste the clipboard"
         '
         'HelpToolStripMenuItem
         '
@@ -139,16 +147,17 @@ Partial Class FrmTextEditor
         'mnuHelpAbout
         '
         Me.mnuHelpAbout.Name = "mnuHelpAbout"
-        Me.mnuHelpAbout.Size = New System.Drawing.Size(107, 22)
+        Me.mnuHelpAbout.Size = New System.Drawing.Size(180, 22)
         Me.mnuHelpAbout.Text = "&About"
+        Me.mnuHelpAbout.ToolTipText = "About the appliction"
         '
         'rchFile
         '
         Me.rchFile.Dock = System.Windows.Forms.DockStyle.Fill
         Me.rchFile.Enabled = False
         Me.rchFile.Location = New System.Drawing.Point(0, 24)
+        Me.rchFile.MaximumSize = New System.Drawing.Size(584, 437)
         Me.rchFile.Name = "rchFile"
-        Me.rchFile.RightMargin = 10
         Me.rchFile.Size = New System.Drawing.Size(584, 437)
         Me.rchFile.TabIndex = 1
         Me.rchFile.Text = ""

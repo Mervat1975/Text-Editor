@@ -22,5 +22,100 @@ Text_Editor
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="M:Text_Editor.FrmTextEditor.Form1_Load(System.Object,System.EventArgs)">
+ <summary>
+ Set the Dialog's initial directory.
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Text_Editor.FrmTextEditor.DataSafe">
+ <summary>
+ Return True If it Is safe To discard the current data.
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:Text_Editor.FrmTextEditor.LoadData(System.String)">
+ <summary>
+ load a data file
+ </summary>
+ <param name="file_name"></param>
+</member>
+<member name="M:Text_Editor.FrmTextEditor.SaveData(System.String)">
+ <summary>
+ save the file.
+ </summary>
+ <param name="file_name"></param>
+</member>
+<member name="M:Text_Editor.FrmTextEditor.rchFile_TextChanged(System.Object,System.EventArgs)">
+ <summary>
+ mark the data as modified.
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Text_Editor.FrmTextEditor.mnuFileSave_Click(System.Object,System.EventArgs)">
+ <summary>
+  save the file.
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Text_Editor.FrmTextEditor.mnuFileSaveAs_Click(System.Object,System.EventArgs)">
+ <summary>
+ save the file with a new name.
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Text_Editor.FrmTextEditor.mnuFileExit_Click(System.Object,System.EventArgs)">
+ <summary>
+ close the application
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Text_Editor.FrmTextEditor.mnuFileOpen_Click(System.Object,System.EventArgs)">
+ <summary>
+ Open a file
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Text_Editor.FrmTextEditor.mnuFileNew_Click(System.Object,System.EventArgs)">
+ <summary>
+  start a new document
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Text_Editor.FrmTextEditor.mnuHelpAbout_Click(System.Object,System.EventArgs)">
+ <summary>
+ display the application information 
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Text_Editor.FrmTextEditor.mnuEditCut_Click(System.Object,System.EventArgs)">
+ <summary>
+  copy the selected text
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Text_Editor.FrmTextEditor.mnuEditCopy_Click(System.Object,System.EventArgs)">
+ <summary>
+ copy the selected text
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Text_Editor.FrmTextEditor.mnuEditPaste_Click(System.Object,System.EventArgs)">
+ <summary>
+  paste the clipboard
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
 </members>
 </doc>

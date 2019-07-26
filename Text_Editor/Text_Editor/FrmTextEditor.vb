@@ -4,11 +4,16 @@ Public Class FrmTextEditor
     Private Const APP_NAME As String = "Text Editor"
     Private dataDirty As Boolean
     Private fileName As String
+    ''Autor:Mervat Mustafa
+    ''Date:july 26, 2019 
+    ''description:A Windows Forms application that will need to be able
+    ''to open, close, edit, save, save as, And create New files (.txt).
 
-
-
-
-    'Set the Dialog's initial directory.
+    ''' <summary>
+    ''' Set the Dialog's initial directory.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Dim init_dir As String = Application.StartupPath
         If init_dir.EndsWith("\bin") Then init_dir = init_dir.Substring(0, init_dir.Length - 4)
@@ -17,14 +22,15 @@ Public Class FrmTextEditor
         Me.Text = APP_NAME + ": Select file to open"
 
     End Sub
-
-
-    'Return true if it is safe to discard the current data.
+    ''' <summary>
+    ''' Return True If it Is safe To discard the current data.
+    ''' </summary>
+    ''' <returns></returns>
     Private Function DataSafe() As Boolean
         If Not dataDirty Then Return True
 
         Select Case MessageBox.Show("The data has been modified. Do you want to save the changes?",
-        "Save Changes?", MessageBoxButtons.YesNoCancel)
+        "Save Changes?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question)
             Case Windows.Forms.DialogResult.Cancel
                 'the user is canceling the operation.
                 'dont' discard the changes.
@@ -41,8 +47,11 @@ Public Class FrmTextEditor
                 Return False
         End Select
     End Function
+    ''' <summary>
+    ''' load a data file
+    ''' </summary>
+    ''' <param name="file_name"></param>
 
-    'load a data file
     Private Sub LoadData(ByVal file_name As String)
         Dim fileStream As IO.FileStream = Nothing
         Dim streamReader As IO.StreamReader = Nothing
@@ -55,7 +64,7 @@ Public Class FrmTextEditor
 
             'save the file name and title
             fileName = file_name
-            Me.Text = APP_NAME & " [" & fileName & "]"
+            Me.Text = APP_NAME & " [" & fileName & "]- Open"
             dataDirty = False
 
 
@@ -68,8 +77,11 @@ Public Class FrmTextEditor
             If Not (streamReader Is Nothing) Then streamReader.Close()
         End Try
     End Sub
+    ''' <summary>
+    ''' save the file.
+    ''' </summary>
+    ''' <param name="file_name"></param>
 
-    'save the file.
     Private Sub SaveData(ByVal file_name As String)
         Dim filestream As IO.FileStream = Nothing
         Dim streamWriter As IO.StreamWriter = Nothing
@@ -91,18 +103,26 @@ Public Class FrmTextEditor
             "Save Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+    ''' <summary>
+    ''' mark the data as modified.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
 
-    'mark the data as modified.
     Private Sub rchFile_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rchFile.TextChanged
         If Not dataDirty Then
-            Me.Text = APP_NAME & "*[" & fileName & "]"
+            Me.Text = "*" & Me.Text
             dataDirty = True
             mnuFileSave.Enabled = True
             mnuFileSaveAs.Enabled = True
         End If
     End Sub
+    ''' <summary>
+    '''  save the file.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
 
-    ' save the file.
     Private Sub mnuFileSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuFileSave.Click
         If fileName Is Nothing Then
             mnuFileSaveAs_Click(sender, e)
@@ -110,52 +130,78 @@ Public Class FrmTextEditor
             SaveData(fileName)
         End If
     End Sub
-    'save the file with a new name.
+    ''' <summary>
+    ''' save the file with a new name.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+
     Private Sub mnuFileSaveAs_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuFileSaveAs.Click
-        dlgSaveFile.Filter = "Word (*.doc) |*.doc;*.rtf|(*.txt) |*.txt|(*.*) |*.*"
+        dlgSaveFile.Filter = "(*.txt) |*.txt|Word (*.doc) |*.doc;*.rtf|(*.*) |*.*"
         If dlgSaveFile.ShowDialog = Windows.Forms.DialogResult.OK Then
             SaveData(dlgSaveFile.FileName)
         End If
     End Sub
-    'close the application
+    ''' <summary>
+    ''' close the application
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+
     Private Sub mnuFileExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuFileExit.Click
         Me.Close()
     End Sub
     Private Sub Form1_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         e.Cancel = Not DataSafe()
     End Sub
+    ''' <summary>
+    ''' Open a file
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
 
-    'Open a file
     Private Sub mnuFileOpen_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuFileOpen.Click
         'make sure the current data is safe
         If Not DataSafe() Then Exit Sub
-        dlgOpenFile.Filter = "Word Documents|*.doc|Excel Worksheets|*.xls|PowerPoint Presentations|*.ppt|Office Files|*.doc;*.xls;*.ppt|All Files|*.*"
+        dlgOpenFile.Filter = "(*.txt) |*.txt|Word (*.doc) |*.doc;*.rtf|(*.*) |*.*"
+        dlgOpenFile.FileName = Nothing
         If dlgOpenFile.ShowDialog = Windows.Forms.DialogResult.OK Then
             LoadData(dlgOpenFile.FileName)
         End If
     End Sub
-    'start a new document
+    ''' <summary>
+    '''  start a new document
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+
     Private Sub mnuFileNew_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuFileNew.Click
         rchFile.Enabled = True
-
         'Make sure the current data is safe.
         If Not DataSafe() Then Exit Sub
-
         Me.rchFile.Text = ""
         fileName = Nothing
-        Me.Text = APP_NAME & " []"
+        Me.Text = APP_NAME & "[" & fileName & "]- New"
         dataDirty = False
 
         'no point in saving a blank file
         Me.mnuFileSave.Enabled = False
         Me.mnuFileSaveAs.Enabled = False
     End Sub
-
+    ''' <summary>
+    ''' display the application information 
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub mnuHelpAbout_Click(sender As Object, e As EventArgs) Handles mnuHelpAbout.Click
         MessageBox.Show("NETD 2202" & vbNewLine & "Lab#5" & vbNewLine & "MervatMustafa", "About", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
     End Sub
-
+    ''' <summary>
+    '''  copy the selected text
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub mnuEditCut_Click(sender As Object, e As EventArgs) Handles mnuEditCut.Click
         'Checks to see if the user selected anything
         If rchFile.SelectedText <> "" Then
@@ -171,19 +217,28 @@ Public Class FrmTextEditor
 
         End If
     End Sub
-
+    ''' <summary>
+    ''' copy the selected text
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub mnuEditCopy_Click(sender As Object, e As EventArgs) Handles mnuEditCopy.Click
         'Checks to see if the user selected anything
         If rchFile.SelectedText <> "" Then
             'Copy the information to the clipboard
             My.Computer.Clipboard.SetText(rchFile.SelectedText)
+
         Else
             'If no text was selected, print out an error message box
             MessageBox.Show("No text is selected to copy", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         End If
     End Sub
-
+    ''' <summary>
+    '''  paste the clipboard
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub mnuEditPaste_Click(sender As Object, e As EventArgs) Handles mnuEditPaste.Click
         'Get the data stored in the clipboard
         Dim iData As IDataObject = My.Computer.Clipboard.GetDataObject()
